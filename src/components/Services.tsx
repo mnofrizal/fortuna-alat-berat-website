@@ -59,7 +59,7 @@ const Services = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
-            Layanan Kami
+            Solusi yang Kami Tawarkan
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Solusi lengkap pengadaan material, fabrication & machining, serta maintenance & repair dengan standar internasional
@@ -75,8 +75,8 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
-              whileHover={{ scale: 1.05 }}
-              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              whileHover={{ translateY: -10 }}
+              className="bg-white p-8 shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <div className="text-yellow-500 mb-6">{service.icon}</div>
               <h3 className="text-2xl font-bold text-slate-900 mb-4">{service.title}</h3>
@@ -98,7 +98,7 @@ const Services = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-slate-900 text-white p-12 rounded-xl"
+          className="bg-slate-900 text-white p-12"
         >
           <h3 className="text-3xl font-bold mb-8 text-center">
             Produk & Layanan yang Kami Sediakan
@@ -111,7 +111,7 @@ const Services = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-center gap-3 p-4 bg-slate-800 rounded-lg"
+                className="flex items-center gap-3 p-4 bg-slate-800"
               >
                 <CheckCircle className="h-5 w-5 text-yellow-400 flex-shrink-0" />
                 <span>{item}</span>

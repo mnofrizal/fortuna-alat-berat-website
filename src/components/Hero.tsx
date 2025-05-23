@@ -32,7 +32,7 @@ const Hero = () => {
               transition={{ delay: 0.2, duration: 0.8 }}
             >
               Solusi Terpercaya untuk{' '}
-              <span className="text-yellow-400">General Supplier</span>
+              <span className="text-yellow-400">Heavy Equipment</span>
             </motion.h1>
             
             <motion.p 

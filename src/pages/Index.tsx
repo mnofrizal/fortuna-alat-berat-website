@@ -3,9 +3,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
+import Company from '../components/Company';
 import Services from '../components/Services';
 import Catalog from '../components/Catalog';
-import Contact from '../components/Contact';
+import ContactPreview from '../components/ContactPreview';
 import Footer from '../components/Footer';
 
 const Index = () => {
@@ -14,12 +15,20 @@ const Index = () => {
       <Navbar />
       <Hero />
       
-      {/* Brief Services Preview */}
+      {/* Company Introduction */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="py-12"
+      >
+        <Company />
+      </motion.section>
+      
+      {/* Services */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
       >
         <Services />
       </motion.section>
@@ -34,14 +43,13 @@ const Index = () => {
         <Catalog />
       </motion.section>
 
-      {/* Contact Section */}
+      {/* Contact Preview */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="py-12"
       >
-        <Contact />
+        <ContactPreview />
       </motion.section>
 
       <Footer />
