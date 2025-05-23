@@ -1,123 +1,207 @@
-
-import React from 'react';
-import { motion } from 'framer-motion';
-import { CheckCircle, Award, Clock, Users, Shield } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { CheckCircle, Award, Clock, Users, Shield } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Company = () => {
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({ 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
         delay: i * 0.1,
-        duration: 0.5
-      }
-    })
+        duration: 0.5,
+      },
+    }),
   };
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="relative overflow-hidden bg-white py-10 pt-14">
       {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-100 rounded-full -translate-y-1/2 translate-x-1/2 opacity-70"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-50 rounded-full translate-y-1/2 -translate-x-1/2 opacity-50"></div>
-      
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="absolute right-0 top-0 h-64 w-64 -translate-y-1/2 translate-x-1/2 rounded-full bg-yellow-100 opacity-70"></div>
+      <div className="absolute bottom-0 left-0 h-96 w-96 -translate-x-1/2 translate-y-1/2 rounded-full bg-blue-50 opacity-50"></div>
+
+      <div className="container relative z-10 mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="mb-10 text-center"
         >
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-yellow-500 font-semibold uppercase tracking-wider mb-2 inline-block"
+            className="mb-2 inline-block font-semibold uppercase tracking-wider text-yellow-500"
           >
             TENTANG KAMI
           </motion.span>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          <h2 className="mb-4 text-4xl font-bold text-slate-900 md:text-5xl">
             Tentang Perusahaan Kami
           </h2>
-          <div className="w-24 h-1 bg-yellow-400 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Lebih dari 15 tahun pengalaman sebagai general supplier dan penyedia jasa untuk industri
-          </p>
+          <div className="mx-auto mb-6 h-1 w-24 bg-yellow-400"></div>
         </motion.div>
-        
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="space-y-8"
-          >
-            <p className="text-lg text-gray-700 leading-relaxed">
-              PT Fortuna Abadi Teknik adalah perusahaan general supplier yang berdedikasi untuk menyediakan solusi terbaik dalam pengadaan material industri, fabrication & machining, serta jasa maintenance & repair.
-            </p>
-            
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Dengan pengalaman lebih dari satu dekade, kami telah melayani berbagai sektor industri termasuk pertambangan, konstruksi, manufaktur, dan infrastruktur di seluruh Indonesia.
-            </p>
-            
-            <div className="grid grid-cols-2 gap-6 mt-8">
-              {[
-                { icon: <CheckCircle className="h-6 w-6 text-green-500" />, text: "Kualitas Terjamin" },
-                { icon: <CheckCircle className="h-6 w-6 text-green-500" />, text: "Teknisi Berpengalaman" },
-                { icon: <CheckCircle className="h-6 w-6 text-green-500" />, text: "Respons Cepat" },
-                { icon: <CheckCircle className="h-6 w-6 text-green-500" />, text: "Harga Kompetitif" }
-              ].map((item, index) => (
-                <motion.div 
-                  key={index}
-                  custom={index}
-                  initial="hidden"
-                  whileInView="visible"
+
+        <Tabs defaultValue="profil" className="w-full">
+          <TabsList className="mx-auto mb-24 grid w-[400px] grid-cols-2 rounded-none border border-yellow-400 bg-white p-1">
+            <TabsTrigger
+              value="profil"
+              className="rounded-none border-r border-yellow-400 data-[state=active]:bg-yellow-400 data-[state=active]:text-slate-900"
+            >
+              Profil
+            </TabsTrigger>
+            <TabsTrigger
+              value="visi-misi"
+              className="rounded-none data-[state=active]:bg-yellow-400 data-[state=active]:text-slate-900"
+            >
+              Visi & Misi
+            </TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="profil">
+            <div className="grid items-center gap-16 md:grid-cols-2">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="space-y-8"
+              >
+                <p className="text-lg leading-relaxed text-gray-700">
+                  <strong>PT Fortuna Abadi Teknik</strong> adalah perusahaan
+                  general supplier yang berdedikasi untuk menyediakan solusi
+                  terbaik dalam pengadaan material industri, fabrication &
+                  machining, serta jasa maintenance & repair.
+                </p>
+
+                <p className="text-lg leading-relaxed text-gray-700">
+                  Sejak berdiri, kami telah melayani berbagai sektor industri
+                  termasuk pembangkitan, konstruksi, manufaktur, dan
+                  infrastruktur di seluruh Indonesia.
+                </p>
+
+                <div className="mt-8 grid grid-cols-3 gap-6">
+                  {[
+                    {
+                      icon: (
+                        <Award className="mx-auto mb-2 h-8 w-8 text-yellow-500" />
+                      ),
+                      number: "100%",
+                      text: "Kualitas Terjamin",
+                    },
+                    {
+                      icon: (
+                        <Clock className="mx-auto mb-2 h-8 w-8 text-yellow-500" />
+                      ),
+                      number: "50+",
+                      text: "Proyek Selesai",
+                    },
+                    {
+                      icon: (
+                        <CheckCircle className="mx-auto mb-2 h-8 w-8 text-yellow-500" />
+                      ),
+                      number: "100%",
+                      text: "Garansi Produk",
+                    },
+                  ].map((item, index) => (
+                    <Card
+                      key={index}
+                      className="rounded-none border bg-white p-4 text-center transition-shadow hover:shadow-lg"
+                    >
+                      <CardContent className="p-2 pt-6">
+                        {item.icon}
+                        <p className="text-2xl font-bold text-slate-900">
+                          {item.number}
+                        </p>
+                        <p className="text-sm text-gray-600">{item.text}</p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="relative"
+              >
+                <div className="absolute -left-5 -top-5 z-0 h-32 w-32 border-8 border-yellow-400 opacity-20"></div>
+                <img
+                  src="https://www.shutterstock.com/shutterstock/videos/1096650743/thumb/1.jpg?ip=x480"
+                  alt="Industrial Equipment"
+                  className="relative z-10 h-auto w-full shadow-xl"
+                />
+              </motion.div>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="visi-misi">
+            <div className="mx-auto max-w-6xl">
+              <div className="grid gap-8 md:grid-cols-2">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  variants={itemVariants}
-                  className="flex items-center gap-3 p-4 bg-gray-50 shadow-sm hover:bg-gray-100 transition-colors"
+                  transition={{ duration: 0.6 }}
+                  className="group relative overflow-hidden rounded-none border border-yellow-400 bg-white p-8 shadow-lg transition-all hover:shadow-xl"
                 >
-                  {item.icon}
-                  <span className="font-medium">{item.text}</span>
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-50 to-transparent opacity-50"></div>
+                  <div className="relative z-10">
+                    <h3 className="mb-6 text-2xl font-bold text-yellow-500">
+                      Visi
+                    </h3>
+                    <p className="text-lg leading-relaxed text-gray-700">
+                      Menjadi mitra terpercaya dalam pemeliharaan dan perbaikan
+                      alat berat di Indonesia dengan layanan berkualitas dan
+                      inovatif yang mendukung pertumbuhan industri.
+                    </p>
+                  </div>
                 </motion.div>
-              ))}
+
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="group relative overflow-hidden rounded-none border border-yellow-400 bg-white p-8 shadow-lg transition-all hover:shadow-xl"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-50 to-transparent opacity-50"></div>
+                  <div className="relative z-10">
+                    <h3 className="mb-6 text-2xl font-bold text-yellow-500">
+                      Misi
+                    </h3>
+                    <ul className="space-y-4">
+                      <li className="flex items-start gap-3">
+                        <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-yellow-500" />
+                        <span className="text-lg text-gray-700">
+                          Memberikan layanan pemeliharaan dan perbaikan yang
+                          tepat waktu dan efisien
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-yellow-500" />
+                        <span className="text-lg text-gray-700">
+                          Mengedepankan keselamatan kerja dan ramah lingkungan
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-yellow-500" />
+                        <span className="text-lg text-gray-700">
+                          Membangun kemitraan jangka panjang dengan pelanggan
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </motion.div>
+              </div>
             </div>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="relative"
-          >
-            <div className="absolute -top-5 -left-5 w-32 h-32 border-8 border-yellow-400 opacity-20 z-0"></div>
-            <img 
-              src="https://images.unsplash.com/photo-1581092335878-2d9ff86ca2bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-              alt="Industrial Equipment" 
-              className="w-full h-auto shadow-xl relative z-10"
-            />
-            
-            <div className="grid grid-cols-3 gap-6 mt-8">
-              {[
-                { icon: <Award className="h-8 w-8 text-yellow-500 mx-auto mb-2" />, number: "15+", text: "Tahun Pengalaman" },
-                { icon: <Users className="h-8 w-8 text-yellow-500 mx-auto mb-2" />, number: "200+", text: "Klien Puas" },
-                { icon: <Clock className="h-8 w-8 text-yellow-500 mx-auto mb-2" />, number: "24/7", text: "Support" }
-              ].map((item, index) => (
-                <Card key={index} className="text-center p-4 bg-white hover:shadow-lg transition-shadow border-none">
-                  <CardContent className="p-2 pt-6">
-                    {item.icon}
-                    <p className="text-2xl font-bold text-slate-900">{item.number}</p>
-                    <p className="text-sm text-gray-600">{item.text}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </motion.div>
-        </div>
+          </TabsContent>
+        </Tabs>
       </div>
     </section>
   );

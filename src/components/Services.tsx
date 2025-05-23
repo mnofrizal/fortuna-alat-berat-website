@@ -1,43 +1,48 @@
+"use client";
+import { motion } from "framer-motion";
+import { CheckCircle } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Wrench, Truck, Clock, Shield, Users, CheckCircle } from 'lucide-react';
-
-const Services = () => {
+export default function Services() {
   const services = [
     {
-      icon: <Wrench className="h-12 w-12" />,
+      image:
+        "https://d2hucwwplm5rxi.cloudfront.net/wp-content/uploads/2021/08/06125648/Where-to-Buy-Car-Spare-Parts-in-Dubai-Cover-20210806.jpg",
       title: "Pengadaan Material & Spare Parts",
-      description: "Menyediakan material dan spare parts industri berkualitas dengan harga kompetitif",
+      description:
+        "Menyediakan material dan spare parts industri berkualitas dengan harga kompetitif",
       features: [
         "Conveyor parts (idler roller, belt cleaner, rubber skirt, dll.)",
         "Hydraulic system parts (solenoid valve, pompa hidrolik, filter, hose, dll.)",
         "Heavy equipment parts (ban loader, silinder hidrolik, accu, filter oli, dll.)",
-        "Jetty maintenance equipment (fender, pile protection, dll.)"
-      ]
+        "Jetty maintenance equipment (fender, pile protection, dll.)",
+      ],
     },
     {
-      icon: <Truck className="h-12 w-12" />,
-      title: "Fabrication & Machining", 
-      description: "Pembuatan dan machining komponen industri dengan presisi tinggi",
+      image: "https://i.ytimg.com/vi/uL6p_sbMIA4/maxresdefault.jpg",
+      title: "Fabrication & Machining",
+      description:
+        "Pembuatan dan machining komponen industri dengan presisi tinggi",
       features: [
         "Pembuatan dan machining shaft, pulley, gear, coupling",
         "Custom fabrication sesuai kebutuhan pelanggan",
         "Proses welding dan finishing berkualitas",
-        "Konsultasi teknis profesional"
-      ]
+        "Konsultasi teknis profesional",
+      ],
     },
     {
-      icon: <Clock className="h-12 w-12" />,
+      image: "https://i.ytimg.com/vi/3X_CiAVrV88/maxresdefault.jpg",
       title: "Maintenance & Repair Services",
-      description: "Layanan pemeliharaan dan perbaikan yang efisien untuk meminimalisir downtime",
+      description:
+        "Layanan pemeliharaan dan perbaikan yang efisien untuk meminimalisir downtime",
       features: [
         "Overhaul dan perbaikan gearbox, motor, sistem hidrolik, dan conveyor",
         "Service rutin & perbaikan heavy equipment",
         "Perbaikan sistem mekanikal & elektrikal",
-        "Calibration & alignment services"
-      ]
-    }
+        "Calibration & alignment services",
+      ],
+    },
   ];
 
   const equipment = [
@@ -46,77 +51,137 @@ const Services = () => {
     "Heavy equipment (loader, dozer, dump truck, forklift)",
     "Dust collector systems",
     "Air compressor units",
-    "Belt conveyor systems"
+    "Belt conveyor systems",
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="space-y-24 bg-gradient-to-b from-white to-slate-50 py-12">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          transition={{ duration: 0.6 }}
+          className="mb-20 text-center"
         >
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">
+          <Badge className="mb-4 border-none bg-amber-100 px-3 py-1 text-amber-800 hover:bg-amber-100">
+            Layanan Kami
+          </Badge>
+          <h2 className="mb-6 text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">
             Solusi yang Kami Tawarkan
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Solusi lengkap pengadaan material, fabrication & machining, serta maintenance & repair dengan standar internasional
+          <p className="mx-auto max-w-3xl text-lg text-slate-600">
+            Solusi lengkap pengadaan material, fabrication & machining, serta
+            maintenance & repair dengan standar internasional
           </p>
         </motion.div>
 
         {/* Main Services */}
-        <div className="grid md:grid-cols-3 gap-8 mb-20">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mb-24 grid gap-8 md:grid-cols-3"
+        >
           {services.map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
-              whileHover={{ translateY: -10 }}
-              className="bg-white p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+              variants={itemVariants}
+              whileHover={{ y: -8 }}
+              className="group"
             >
-              <div className="text-yellow-500 mb-6">{service.icon}</div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">{service.title}</h3>
-              <p className="text-gray-600 mb-6">{service.description}</p>
-              <ul className="space-y-2">
-                {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700">{feature}</span>
-                  </li>
-                ))}
-              </ul>
+              <Card className="h-full overflow-hidden rounded-none border-2 bg-slate-50 transition-all duration-300 hover:shadow-xl">
+                <CardContent className="p-0">
+                  <div className="h-64 w-full overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="mb-3 text-2xl font-bold text-slate-900">
+                      {service.title}
+                    </h3>
+                    <p className="text-slate-600">{service.description}</p>
+                  </div>
+
+                  {/* <div className="bg-slate-50 p-8 pt-6">
+                    <ul className="space-y-3">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-3">
+                          <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-500" />
+                          <span className="text-sm text-slate-700">
+                            {feature}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div> */}
+                </CardContent>
+              </Card>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Equipment Types */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-slate-900 text-white p-12"
+          transition={{ duration: 0.7 }}
+          className="relative left-[50%] right-[50%] mx-[-50vw] w-screen overflow-hidden"
         >
-          <h3 className="text-3xl font-bold mb-8 text-center">
-            Produk & Layanan yang Kami Sediakan
-          </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {equipment.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="flex items-center gap-3 p-4 bg-slate-800"
-              >
-                <CheckCircle className="h-5 w-5 text-yellow-400 flex-shrink-0" />
-                <span>{item}</span>
-              </motion.div>
-            ))}
+          <div className="absolute inset-0 z-0 bg-[url('https://media.istockphoto.com/id/1152829255/id/foto/mekanik-profesional-bulldozer.jpg?s=2048x2048&w=is&k=20&c=_OjnAK6WAfChN28uWxCoRasSrp6C_X8zoNCQM94C3DI=')] bg-cover bg-fixed bg-center bg-no-repeat"></div>
+          <div className="absolute inset-0 z-0 bg-black/60"></div>
+
+          <div className="container relative z-10 mx-auto px-4 py-20">
+            <h3 className="mb-10 text-center text-5xl font-bold text-white">
+              Produk & Layanan yang Kami Sediakan
+            </h3>
+
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="grid gap-5 md:grid-cols-2 lg:grid-cols-3"
+            >
+              {equipment.map((item, index) => (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  className="flex items-center gap-3 bg-amber-500/40 p-5 backdrop-blur-sm transition-colors hover:bg-amber-700"
+                >
+                  <CheckCircle className="h-10 w-10 flex-shrink-0 text-amber-400" />
+                  <span className="text-xl font-medium capitalize text-white">
+                    {item}
+                  </span>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </motion.div>
 
@@ -125,28 +190,36 @@ const Services = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-20 grid md:grid-cols-4 gap-8"
+          transition={{ duration: 0.6 }}
+          className="mt-24 grid gap-8 md:grid-cols-4"
         >
-          <div className="text-center">
-            <div className="text-4xl font-bold text-yellow-500 mb-2">≤ 2 Hari</div>
-            <div className="text-gray-600">Waktu Pengiriman</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-yellow-500 mb-2">1000+</div>
-            <div className="text-gray-600">Item Tersedia</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-yellow-500 mb-2">≥ 95%</div>
-            <div className="text-gray-600">Kepuasan Pelanggan</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-yellow-500 mb-2">30 Hari</div>
-            <div className="text-gray-600">Garansi Produk</div>
-          </div>
+          {[
+            { value: "≤ 2 Hari", label: "Waktu Pengiriman" },
+            { value: "1000+", label: "Item Tersedia" },
+            { value: "≥ 95%", label: "Kepuasan Pelanggan" },
+            { value: "30 Hari", label: "Garansi Produk" },
+          ].map((stat, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              className="group relative"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-400/20 to-amber-600/20 opacity-70 blur-xl transition-all group-hover:blur-lg"></div>
+              <Card className="relative h-full rounded-none border-none bg-white/80 shadow-md backdrop-blur-sm">
+                <CardContent className="flex flex-col items-center justify-center p-8">
+                  <div className="mb-2 text-4xl font-bold text-amber-600 md:text-5xl">
+                    {stat.value}
+                  </div>
+                  <div className="font-medium text-slate-600">{stat.label}</div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>
   );
-};
-
-export default Services;
+}
