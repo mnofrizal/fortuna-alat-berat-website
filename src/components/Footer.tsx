@@ -19,11 +19,11 @@ const Footer = () => {
               <Wrench className="h-8 w-8 text-yellow-400" />
               <div>
                 <h3 className="font-bold text-xl">PT Fortuna Abadi Teknik</h3>
-                <p className="text-sm text-gray-300">Heavy Equipment Solutions</p>
+                <p className="text-sm text-gray-300">General Supplier & Services</p>
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Mitra terpercaya dalam pemeliharaan dan perbaikan alat berat dengan layanan berkualitas dan inovatif sejak [tahun berdiri].
+              Mitra terpercaya dalam pengadaan material industri, fabrication & machining, serta maintenance & repair dengan layanan berkualitas dan inovatif sejak 2010.
             </p>
           </motion.div>
 
@@ -36,11 +36,11 @@ const Footer = () => {
           >
             <h4 className="font-bold text-lg mb-4">Layanan Kami</h4>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li className="hover:text-yellow-400 transition-colors cursor-pointer">Preventive Maintenance</li>
-              <li className="hover:text-yellow-400 transition-colors cursor-pointer">Corrective Maintenance</li>
-              <li className="hover:text-yellow-400 transition-colors cursor-pointer">Emergency Repair 24/7</li>
-              <li className="hover:text-yellow-400 transition-colors cursor-pointer">Overhaul Engine</li>
-              <li className="hover:text-yellow-400 transition-colors cursor-pointer">Hydraulic Repair</li>
+              <li className="hover:text-yellow-400 transition-colors cursor-pointer">Pengadaan Material & Spare Parts</li>
+              <li className="hover:text-yellow-400 transition-colors cursor-pointer">Conveyor & Hydraulic Parts</li>
+              <li className="hover:text-yellow-400 transition-colors cursor-pointer">Fabrication & Machining</li>
+              <li className="hover:text-yellow-400 transition-colors cursor-pointer">Maintenance & Repair Services</li>
+              <li className="hover:text-yellow-400 transition-colors cursor-pointer">Calibration & Alignment</li>
             </ul>
           </motion.div>
 
@@ -51,13 +51,13 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <h4 className="font-bold text-lg mb-4">Jenis Alat Berat</h4>
+            <h4 className="font-bold text-lg mb-4">Produk & Sistem</h4>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li className="hover:text-yellow-400 transition-colors cursor-pointer">Excavator</li>
-              <li className="hover:text-yellow-400 transition-colors cursor-pointer">Dump Truck</li>
-              <li className="hover:text-yellow-400 transition-colors cursor-pointer">Loader</li>
-              <li className="hover:text-yellow-400 transition-colors cursor-pointer">Dozer</li>
-              <li className="hover:text-yellow-400 transition-colors cursor-pointer">Forklift</li>
+              <li className="hover:text-yellow-400 transition-colors cursor-pointer">Conveyor Systems</li>
+              <li className="hover:text-yellow-400 transition-colors cursor-pointer">Hydraulic Systems</li>
+              <li className="hover:text-yellow-400 transition-colors cursor-pointer">Heavy Equipment</li>
+              <li className="hover:text-yellow-400 transition-colors cursor-pointer">Industrial Components</li>
+              <li className="hover:text-yellow-400 transition-colors cursor-pointer">Mechanical & Electrical Systems</li>
             </ul>
           </motion.div>
 

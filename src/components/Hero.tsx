@@ -11,7 +11,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
-          alt="Heavy Equipment Background" 
+          alt="Industrial Supplier Background" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-blue-900/80 to-slate-800/70"></div>
@@ -32,7 +32,7 @@ const Hero = () => {
               transition={{ delay: 0.2, duration: 0.8 }}
             >
               Solusi Terpercaya untuk{' '}
-              <span className="text-yellow-400">Heavy Equipment</span>
+              <span className="text-yellow-400">General Supplier</span>
             </motion.h1>
             
             <motion.p 
@@ -41,8 +41,8 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              PT Fortuna Abadi Teknik menyediakan layanan maintenance & repair alat berat 
-              berkualitas tinggi dengan teknisi bersertifikat dan workshop lengkap.
+              PT Fortuna Abadi Teknik menyediakan layanan pengadaan material, fabrication & machining, 
+              serta maintenance & repair dengan kualitas terbaik untuk industri.
             </motion.p>
 
             <motion.div 
@@ -83,17 +83,17 @@ const Hero = () => {
               <div className="text-center">
                 <Shield className="h-8 w-8 text-yellow-400 mx-auto mb-2" />
                 <div className="text-2xl font-bold">100%</div>
-                <div className="text-sm text-gray-300">Garansi Layanan</div>
+                <div className="text-sm text-gray-300">Garansi Produk</div>
               </div>
               <div className="text-center">
                 <Clock className="h-8 w-8 text-yellow-400 mx-auto mb-2" />
                 <div className="text-2xl font-bold">24/7</div>
-                <div className="text-sm text-gray-300">Emergency Support</div>
+                <div className="text-sm text-gray-300">Technical Support</div>
               </div>
               <div className="text-center">
                 <Users className="h-8 w-8 text-yellow-400 mx-auto mb-2" />
-                <div className="text-2xl font-bold">50+</div>
-                <div className="text-sm text-gray-300">Teknisi Ahli</div>
+                <div className="text-2xl font-bold">1000+</div>
+                <div className="text-sm text-gray-300">Produk Tersedia</div>
               </div>
             </motion.div>
           </motion.div>
@@ -107,7 +107,7 @@ const Hero = () => {
             <div className="relative z-10">
               <img 
                 src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="Heavy Equipment" 
+                alt="Industrial Equipment" 
                 className="rounded-lg shadow-2xl"
               />
               <motion.div 
