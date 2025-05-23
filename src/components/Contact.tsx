@@ -219,7 +219,7 @@ const Contact = () => {
                 <p>• Teknisi Bersertifikat Heavy Equipment</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
