@@ -10,6 +10,19 @@ import ContactPreview from '../components/ContactPreview';
 import Footer from '../components/Footer';
 
 const Index = () => {
+  // Animation variants for sections
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -17,27 +30,30 @@ const Index = () => {
       
       {/* Company Introduction */}
       <motion.section
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={sectionVariants}
       >
         <Company />
       </motion.section>
       
       {/* Services */}
       <motion.section
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={sectionVariants}
       >
         <Services />
       </motion.section>
 
       {/* Equipment Showcase */}
       <motion.section
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={sectionVariants}
         className="py-12"
       >
         <Catalog />
@@ -45,9 +61,10 @@ const Index = () => {
 
       {/* Contact Preview */}
       <motion.section
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={sectionVariants}
       >
         <ContactPreview />
       </motion.section>
