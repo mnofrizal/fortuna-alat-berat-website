@@ -17,6 +17,9 @@ COPY . .
 # Build the application
 RUN npm run build
 
+# Set environment variable for Vite
+ENV VITE_HOST=0.0.0.0
+
 # Production stage
 FROM node:18-alpine
 
@@ -34,3 +37,7 @@ EXPOSE 4173
 
 # Start the application
 CMD ["npm", "start"]
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:4173 || exit 1
