@@ -12,7 +12,7 @@ const ContactPreview = () => {
           initial={{ scale: 1.1 }}
           whileInView={{ scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           className="h-full w-full"
         >
           <img
@@ -29,7 +29,7 @@ const ContactPreview = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.7 }}
             className="mb-10 max-w-2xl text-white md:mb-0"
           >
@@ -61,7 +61,7 @@ const ContactPreview = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
             <div className="w-full max-w-md bg-white p-10 shadow-2xl">

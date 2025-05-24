@@ -60,7 +60,7 @@ const Hero = () => {
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
-              className="text-5xl font-bold leading-tight md:text-6xl"
+              className="text-4xl font-bold uppercase leading-tight md:text-5xl"
             >
               Solusi Terpercaya untuk{" "}
               <span className="text-yellow-400">Heavy Equipment</span>
@@ -71,18 +71,13 @@ const Hero = () => {
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
-              className="max-w-xl text-xl leading-relaxed text-gray-200"
+              className="max-w-xl text-2xl leading-relaxed text-gray-200"
             >
               PT Fortuna Abadi Teknik menyediakan layanan{" "}
-              <strong className="text-yellow-200">Pengadaan Material</strong>,
-              <strong className="text-yellow-200">
-                {" "}
-                Fabrication & Machining
-              </strong>
-              , serta{" "}
-              <strong className="text-yellow-200">
-                Maintenance & Repair
-              </strong>{" "}
+              <span className="text-yellow-300">Pengadaan Material</span>,
+              <span className="text-yellow-300"> Fabrication & Machining</span>,
+              serta{" "}
+              <span className="text-yellow-300">Maintenance & Repair</span>{" "}
               dengan kualitas terbaik untuk industri.
             </motion.p>
 

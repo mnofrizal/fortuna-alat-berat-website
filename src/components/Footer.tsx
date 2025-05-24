@@ -11,7 +11,7 @@ const Footer = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="space-y-4"
           >
             <div className="flex items-center space-x-2">
@@ -34,7 +34,7 @@ const Footer = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ delay: 0.1 }}
           >
             <h4 className="mb-4 text-lg font-bold">Layanan Kami</h4>
@@ -61,7 +61,7 @@ const Footer = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ delay: 0.2 }}
           >
             <h4 className="mb-4 text-lg font-bold">Produk & Sistem</h4>
@@ -88,7 +88,7 @@ const Footer = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ delay: 0.3 }}
           >
             <h4 className="mb-4 text-lg font-bold">Hubungi Kami</h4>
@@ -125,7 +125,7 @@ const Footer = () => {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ delay: 0.4 }}
           className="mt-12 border-t border-gray-700 pt-8 text-center"
         >

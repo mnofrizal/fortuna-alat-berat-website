@@ -17,8 +17,11 @@ export default {
 				'2xl': '1400px'
 			}
 		},
-		extend: {
-			colors: {
+extend: {
+fontFamily: {
+  sans: ['Montserrat', 'sans-serif'],
+},
+colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',

@@ -80,7 +80,7 @@ const Navbar = () => {
                     : "text-white"
                 }`}
               >
-                <span className="relative z-10">{item.name}</span>
+                <span className="relative z-10 font-semibold">{item.name}</span>
 
                 {/* Hover effect */}
                 <motion.span

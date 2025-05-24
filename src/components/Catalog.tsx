@@ -21,99 +21,97 @@ const Catalog = () => {
 
   const categories = [
     "Semua",
-    "Excavator",
-    "Dump Truck",
-    "Loader",
-    "Dozer",
-    "Forklift",
+    "Conveyor Parts",
+    "Heavy Equipment Parts",
+    "Hydraulic Parts",
+    "Mechanical Parts",
   ];
 
   const equipmentCatalog = [
     {
       id: 1,
-      name: "CENTRAL GUIDE ROLLERS M24 D100 - FORTAMECH",
-      category: "Excavator",
-      image:
-        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      name: "CENTRAL GUIDE ROLLER D100 M24",
+      category: "Conveyor Parts",
+      image: "/catalog/centra-guide-roller.jpg",
       specifications: {
-        "Berat Operasi": "19.900 kg",
-        "Kapasitas Bucket": "0.93 m³",
-        "Engine Power": "110 kW",
-        Reach: "9.88 m",
+        Diameter: "100 mm",
+        "Thread Size": "M24",
+        Material: "High-grade Steel",
+        Treatment: "Heat Treated",
       },
       services: [
+        "Installation Service",
         "Preventive Maintenance",
-        "Engine Overhaul",
-        "Hydraulic Repair",
+        "Quality Inspection",
       ],
       status: "Tersedia",
     },
     {
       id: 2,
-      name: "CENTRAL GUIDE ROLLERS M24 D120 - FORTAMECH",
-      category: "Excavator",
-      image:
-        "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      name: "CENTRAL GUIDE ROLLER D120 M24",
+      category: "Conveyor Parts",
+      image: "/catalog/centra-guide-roller-1.jpg",
       specifications: {
-        "Berat Operasi": "20.300 kg",
-        "Kapasitas Bucket": "1.07 m³",
-        "Engine Power": "105 kW",
-        Reach: "9.65 m",
+        Diameter: "120 mm",
+        "Thread Size": "M24",
+        Material: "High-grade Steel",
+        Treatment: "Heat Treated",
       },
       services: [
-        "Corrective Maintenance",
-        "Undercarriage Repair",
-        "Transmission Service",
+        "Installation Service",
+        "Alignment Check",
+        "Performance Testing",
       ],
       status: "Dalam Maintenance",
     },
     {
       id: 3,
-      name: "INNER SHAFT GUIDE ROLLERS M25 D26 MM - FORTAMECH",
-      category: "Dump Truck",
-      image:
-        "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      name: "RUBBER SKIRT STANDARD GRADE",
+      category: "Conveyor Parts",
+      image: "/catalog/rubber-skirt.jpg",
       specifications: {
-        "Kapasitas Muatan": "15 ton",
-        Engine: "J08E-VD 7.7L",
-        Transmisi: "Manual 6-speed",
-        "Dimensi Box": "5.2 x 2.3 x 1.2 m",
+        Material: "Natural Rubber",
+        Hardness: "60±5° Shore A",
+        "Temperature Range": "-30°C to +70°C",
+        Application: "Dust Sealing",
       },
-      services: ["Engine Tune-up", "Brake Service", "Electrical Check"],
+      services: [
+        "Custom Cutting",
+        "Installation Service",
+        "Replacement Service",
+      ],
       status: "Tersedia",
     },
     {
       id: 4,
-      name: "INNER SHAFT GUIDE ROLLERS M24 D32 MM - FORTAMECH",
-      category: "Loader",
-      image:
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      name: "BUCKET PIN EXCAVATOR HD785",
+      category: "Heavy Equipment Parts",
+      image: "/catalog/bucket-pin.jpg",
       specifications: {
-        "Berat Operasi": "12.500 kg",
-        "Kapasitas Bucket": "2.3 m³",
-        "Engine Power": "123 kW",
-        "Tipping Load": "8.840 kg",
+        Material: "Alloy Steel",
+        "Surface Hardness": "HRC 45-50",
+        Treatment: "Heat Treated",
+        "Tensile Strength": "≥ 1000 MPa",
       },
       services: [
-        "Hydraulic System Check",
-        "Cooling System Service",
-        "Filter Replacement",
+        "Pin Inspection",
+        "Installation Service",
+        "Bushing Replacement",
       ],
       status: "Operasional",
     },
     {
       id: 5,
-      name: "LINER PLATE 12 X 410 X 410 MM MATERIAL AR400 LINING CHUTE CONVEYOR",
-      category: "Dozer",
-      image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      name: "BUCKET PIN DOZER D375A",
+      category: "Heavy Equipment Parts",
+      image: "/catalog/bucket-pin.jpg",
       specifications: {
-        "Berat Operasi": "18.400 kg",
-        "Engine Power": "119 kW",
-        "Blade Capacity": "3.3 m³",
-        "Ground Pressure": "46.1 kPa",
+        Material: "Alloy Steel",
+        "Surface Hardness": "HRC 48-52",
+        Treatment: "Heat Treated",
+        "Tensile Strength": "≥ 1200 MPa",
       },
-      services: ["Track Maintenance", "Engine Service", "Blade Adjustment"],
+      services: ["Pin Replacement", "Bushing Service", "Lubrication Service"],
       status: "Tersedia",
     },
   ];
@@ -141,18 +139,18 @@ const Catalog = () => {
   };
 
   return (
-    <section className="bg-gray-50 py-20">
+    <section className="py-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           className="mb-12 text-center"
         >
-          <h2 className="mb-4 text-4xl font-bold text-slate-900">
+          <h2 className="mb-4 text-3xl font-bold text-slate-900">
             Katalog Heavy Equipment
           </h2>
-          <p className="mx-auto max-w-3xl text-xl text-gray-600">
+          <p className="mx-auto max-w-3xl text-lg text-gray-600">
             Daftar lengkap alat berat yang tersedia untuk layanan maintenance
             dan repair
           </p>
@@ -201,81 +199,85 @@ const Catalog = () => {
             {filteredEquipment.map((equipment, index) => (
               <CarouselItem
                 key={equipment.id}
-                className="pl-2 md:basis-1/2 md:pl-4 lg:basis-1/3"
+                className="pl-2 md:basis-1/2 md:pl-4 lg:basis-1/4"
               >
-                <Card className="overflow-hidden border-2 bg-white transition-all duration-300 hover:shadow-xl">
-                  <CardContent className="p-0">
-                    <div className="relative">
+                <Card className="relative h-[600px] overflow-hidden rounded-none border bg-white transition-all duration-300 hover:shadow-xl">
+                  <CardContent className="flex h-full flex-col p-0">
+                    <div className="relative h-[200px]">
                       <img
                         src={equipment.image}
                         alt={equipment.name}
-                        className="h-48 w-full object-cover"
+                        className="h-full w-full object-cover object-center"
                       />
-                      <div
+                      {/* <div
                         className={`absolute right-4 top-4 rounded-full px-3 py-1 text-sm font-medium ${getStatusColor(
                           equipment.status
                         )}`}
                       >
                         {equipment.status}
-                      </div>
+                      </div> */}
                     </div>
 
-                    <div className="p-6">
-                      <div className="mb-4">
-                        <h3 className="text-xl font-bold text-slate-900">
-                          {equipment.name}
-                        </h3>
-                        <p className="text-gray-600">{equipment.category}</p>
-                      </div>
-
-                      {/* Specifications */}
-                      <div className="mb-4">
-                        <h4 className="mb-2 font-semibold text-slate-900">
-                          Spesifikasi
-                        </h4>
-                        <div className="space-y-1">
-                          {Object.entries(equipment.specifications)
-                            .slice(0, 2)
-                            .map(([key, value]) => (
-                              <div
-                                key={key}
-                                className="flex justify-between text-sm"
-                              >
-                                <span className="text-gray-600">{key}:</span>
-                                <span className="font-medium">{value}</span>
-                              </div>
-                            ))}
+                    <div className="flex h-full flex-col justify-between p-6">
+                      <div>
+                        <div className="mb-4 min-h-[80px]">
+                          <h3 className="mb-2 text-lg font-bold text-slate-900">
+                            {equipment.name}
+                          </h3>
+                          <p className="text-sm text-gray-600">
+                            {equipment.category}
+                          </p>
                         </div>
-                      </div>
 
-                      {/* Services */}
-                      <div className="mb-4">
-                        <h4 className="mb-2 font-semibold text-slate-900">
-                          Layanan Tersedia
-                        </h4>
-                        <div className="flex flex-wrap gap-2">
-                          {equipment.services
-                            .slice(0, 2)
-                            .map((service, idx) => (
-                              <span
-                                key={idx}
-                                className="rounded-full bg-yellow-100 px-2 py-1 text-xs text-yellow-800"
-                              >
-                                {service}
+                        {/* Specifications */}
+                        <div className="mb-6">
+                          <h4 className="mb-2 text-sm font-semibold text-slate-900">
+                            Spesifikasi
+                          </h4>
+                          <div className="space-y-1">
+                            {Object.entries(equipment.specifications)
+                              .slice(0, 2)
+                              .map(([key, value]) => (
+                                <div
+                                  key={key}
+                                  className="flex justify-between text-xs"
+                                >
+                                  <span className="text-gray-600">{key}:</span>
+                                  <span className="font-medium">{value}</span>
+                                </div>
+                              ))}
+                          </div>
+                        </div>
+
+                        {/* Services */}
+                        <div className="mb-6">
+                          <h4 className="mb-2 text-sm font-semibold text-slate-900">
+                            Layanan Tersedia
+                          </h4>
+                          <div className="flex flex-wrap gap-2">
+                            {equipment.services
+                              .slice(0, 2)
+                              .map((service, idx) => (
+                                <span
+                                  key={idx}
+                                  className="rounded-full bg-yellow-100 px-2 py-1 text-[10px] text-yellow-800"
+                                >
+                                  {service}
+                                </span>
+                              ))}
+                            {equipment.services.length > 2 && (
+                              <span className="rounded-full bg-gray-100 px-2 py-1 text-[10px] text-gray-600">
+                                +{equipment.services.length - 2} lainnya
                               </span>
-                            ))}
-                          {equipment.services.length > 2 && (
-                            <span className="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-600">
-                              +{equipment.services.length - 2} lainnya
-                            </span>
-                          )}
+                            )}
+                          </div>
                         </div>
                       </div>
 
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="mt-4 w-full rounded-lg bg-yellow-400 py-2 font-semibold text-slate-900 transition-colors hover:bg-yellow-300"
+                        className="w-full rounded-lg bg-yellow-400 py-2 text-sm font-semibold text-slate-900 transition-colors hover:bg-yellow-300"
                       >
                         Lihat Detail
                       </motion.button>
@@ -297,7 +299,7 @@ const Catalog = () => {
             animate={{ opacity: 1 }}
             className="py-12 text-center"
           >
-            <p className="text-xl text-gray-600">
+            <p className="text-lg text-gray-600">
               Tidak ada equipment yang ditemukan
             </p>
           </motion.div>
