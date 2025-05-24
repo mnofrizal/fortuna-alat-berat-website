@@ -9,14 +9,7 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "vite preview",
-    "install:prod": "npm install --production",
-    "prepare": "npm install --production=false",
-    "docker:build": "docker-compose build",
-    "docker:up": "docker-compose up -d",
-    "docker:down": "docker-compose down",
-    "docker:dev": "docker-compose up -d app-dev",
-    "docker:prod": "docker-compose up -d app-prod"
+    "start": "vite preview"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
